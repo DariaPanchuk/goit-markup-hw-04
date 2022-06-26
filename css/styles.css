@@ -9,6 +9,7 @@
     --accent-bg-color: #F5F4FA;
     --primary-bg-color: #FFFFFF;
     --header-logo-color: #000000;
+    --icon-color: #AFB1B8;
     --item: 3;
     --indent: 30px;
 }
@@ -129,6 +130,9 @@ ul {
 .portfolio-button:focus {
     color: var(--primary-bg-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
+    0px 1px 2px rgba(0, 0, 0, 0.08), 
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Header */
@@ -170,8 +174,9 @@ ul {
 }
 
 .header-contacts {
-    display: flex;
+    display: inline-flex;
     margin-left: auto;
+    align-items: center;
 }
 
 .header-contact {
@@ -190,12 +195,27 @@ ul {
     color: var(--accent-color);
 }
 
+.header-icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
 /* Hero */
 .hero {
+    background-image: linear-gradient(to right, 
+        rgba(47, 48, 58, 0.4), 
+        rgba(47, 48, 58, 0.4)), 
+    url(../images/page-1/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--footer-color);
+    
     padding-top: 200px;
     padding-bottom: 200px;
     text-align: center;
-    background-color: var(--footer-color);
 }
 
 .hero-title {
@@ -210,6 +230,24 @@ ul {
 }
 
 /* Benefits */
+.benefits-icons {
+    display: flex;
+}
+
+.benefits-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 120px;
+    background-color: var(--accent-bg-color);
+    margin-bottom: 30px;
+}
+
+.benefits-icon:not(:last-child) {
+    margin-right: 30px;
+}
+
 .benefits-list {
     display: flex;
 }
@@ -257,7 +295,8 @@ ul {
 }
 
 .what-do-title,
-.team-title {
+.team-title,
+.client-title {
     margin-bottom: 50px;
     font-weight: 700;
     font-size: 36px;
@@ -301,6 +340,72 @@ ul {
     color: var(--title-text-color);
 }
 
+.team-position {
+    margin-bottom: 16px;
+}
+
+.team-social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.team-socials-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--icon-color);
+    background-color: var(--primary-bg-color);
+    border-radius: 50%;
+}
+
+.team-socials-link:hover,
+.team-socials-link:focus {
+    color: var(--primary-bg-color);
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.team-socials-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.team-socials-icon {
+    fill: currentColor;
+}
+
+/* Clients */
+.clients-list {
+    display: flex;
+}
+
+.client-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+    color: var(--icon-color);
+    border: 1px solid var(--icon-color);
+    border-radius: 4px;
+}
+
+.client-link:hover,
+.client-link:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.clients-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.client-logo {
+    fill: currentColor;
+}
+
 /* Portfolio */
 .filter-list {
     display: flex;
@@ -322,6 +427,13 @@ ul {
 .works-item {
     flex-basis: calc((100% - var(--indent) * var(--item)) / var(--item));
     margin: calc(var(--indent) / 2);
+}
+
+.works-item:hover,
+.works-item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06), 
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .works-description {
@@ -353,6 +465,15 @@ ul {
     background-color: var(--footer-color);
 }
 
+.footer-list {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-info {
+    margin-right: 70px;
+}
+
 .footer-logo {
     display: block;
     margin-bottom: 20px;
@@ -382,4 +503,43 @@ ul {
 .footer-contact:hover,
 .footer-contact:focus {
     color: var(--accent-color);
+}
+
+.strong {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-bg-color);
+}
+
+.social-media-list {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-media-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--primary-bg-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.social-media-link:hover,
+.social-media-link:focus {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.social-media-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-media-icon {
+    fill: currentColor;
 }
